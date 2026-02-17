@@ -33,61 +33,53 @@ This script is a **technical tool** for activating Windows using the Key Managem
 
 1. **Download the script**  
    Clone the repository or download `activate.ps1` directly:
-   ```powershell
-   git clone https://github.com/heanczko311299/windows-activator-script.git
-   cd windows-activator-script
-   ```
+ ```powershell
+ git clone https://github.com/heanczko311299/windows-activator-script.git
+ cd windows-activator-script
+ ```
 
 Run PowerShell as Administrator
 Right-click on PowerShell and select "Run as Administrator"
 
 Navigate to the script folder
 ```powershell
-
 cd C:\path\to\downloaded\script
 ```
 
 Execute the script
 ```powershell
-
 .\activate.ps1
-
-    Follow the prompts
-
-        Enter your Windows product key when prompted
-
-        The script will automatically:
-
-            Install your product key
-
-            Try to configure KMS server kms.digiboy.ir
-
-            If that fails, fall back to kms.msguides.com
-
-            Activate Windows
 ```
 
+- Follow the prompts
+- Enter your Windows product key when prompted
+- The script will automatically:
+- Install your product key
+- Try to configure KMS server kms.digiboy.ir
+- If that fails, fall back to kms.msguides.com
+- Activate Windows
+
 What the Script Does (Step by Step)
-```text
+
 
 [1/4] Installing product key...    → slmgr /ipk [your-key]
 [2/4] Trying primary server...     → slmgr /skms kms.digiboy.ir
 [3/4] Trying secondary server...   → slmgr /skms kms.msguides.com (if primary fails)
 [4/4] Activating Windows...        → slmgr /ato
-```
+
 Script Features
 
-    ✅ Automatic ExecutionPolicy check – sets to RemoteSigned if needed
+✅ Automatic ExecutionPolicy check – sets to RemoteSigned if needed
 
-    ✅ Administrator privilege verification – warns if not running as admin
+✅ Administrator privilege verification – warns if not running as admin
 
-    ✅ Product key format validation – ensures correct format (XXXXX-XXXXX-XXXXX-XXXXX-XXXXX)
+✅ Product key format validation – ensures correct format (XXXXX-XXXXX-XXXXX-XXXXX-XXXXX)
 
-    ✅ Dual KMS server fallback – tries alternative if primary fails
+✅ Dual KMS server fallback – tries alternative if primary fails
 
-    ✅ Clear visual feedback – color-coded progress messages
+✅ Clear visual feedback – color-coded progress messages
 
-    ✅ License information display – shows current activation status at the end
+✅ License information display – shows current activation status at the end
 
 🖥️ Supported Windows Versions
 
@@ -98,13 +90,12 @@ Version	Editions
 ✅ Windows Server	2012 R2, 2016, 2019, 2022, 2025
 📋 Compatibility Notes
 
-- KMS hosts are backward compatible – a newer KMS server can activate older Windows versions
-- Windows 11 requires a KMS host running Windows Server 2022 or later for optimal compatibility
-- Client computers must connect to the KMS host at least once every 180 days to stay activated
+- KMS hosts are backward compatible – a newer KMS server can activate older Windows versions.
+- Windows 11 requires a KMS host running Windows Server 2022 or later for optimal compatibility.
+- Client computers must connect to the KMS host at least once every 180 days to stay activated.
 
 ⚙️ Technical Details
 Script Logic Flow
-powershell
 
 # Simplified flow of activate.ps1
 1. Check if running as Administrator
@@ -136,7 +127,6 @@ Right-click PowerShell and select "Run as Administrator"
 The script will attempt to auto-fix this, or you can run manually:
 
 ```powershell
-
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 ```
 
@@ -151,7 +141,6 @@ Activation fails
 - Verify the KMS servers are reachable:
 
 ```powershell
-
 Test-NetConnection kms.digiboy.ir -Port 1688
 ```
 
@@ -166,4 +155,4 @@ Test-NetConnection kms.digiboy.ir -Port 1688
 
 This script is provided as-is for educational and legitimate business use. Always ensure compliance with Microsoft licensing terms.
 
-Remember: This script is a convenience tool for legitimate license holders. Always ensure you have the proper licensing before activating any Microsoft prod
+Remember: This script is a convenience tool for legitimate license holders. Always ensure you have the proper licensing before activating any Microsoft product.
