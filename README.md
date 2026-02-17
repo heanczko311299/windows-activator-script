@@ -98,11 +98,9 @@ Version	Editions
 ✅ Windows Server	2012 R2, 2016, 2019, 2022, 2025
 📋 Compatibility Notes
 
-    KMS hosts are backward compatible – a newer KMS server can activate older Windows versions
-
-    Windows 11 requires a KMS host running Windows Server 2022 or later for optimal compatibility
-
-    Client computers must connect to the KMS host at least once every 180 days to stay activated
+- KMS hosts are backward compatible – a newer KMS server can activate older Windows versions
+- Windows 11 requires a KMS host running Windows Server 2022 or later for optimal compatibility
+- Client computers must connect to the KMS host at least once every 180 days to stay activated
 
 ⚙️ Technical Details
 Script Logic Flow
@@ -123,38 +121,34 @@ Error Handling
 
 The script includes error handling for:
 
-    Invalid product key format
-
-    Failed KMS server connections
-
-    Activation errors
-
-    Permission issues
+- Invalid product key format
+- Failed KMS server connections
+- Activation errors
+- Permission issues
 
 🔧 Troubleshooting
 "This script requires Administrator privileges"
 
-    Right-click PowerShell and select "Run as Administrator"
+Right-click PowerShell and select "Run as Administrator"
 
 "ExecutionPolicy is Restricted"
 
-    The script will attempt to auto-fix this, or you can run manually:
+The script will attempt to auto-fix this, or you can run manually:
+
 ```powershell
 
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 ```
 
-"Invalid product key format"
+"Invalid product key form
 
-    Ensure your key follows the format: XXXXX-XXXXX-XXXXX-XXXXX-XXXXX
-
-    Use only uppercase letters and numbers
+- Ensure your key follows the format: XXXXX-XXXXX-XXXXX-XXXXX-XXXXX
+- Use only uppercase letters and numbers
 
 Activation fails
 
-    Check your internet connection
-
-    Verify the KMS servers are reachable:
+- Check your internet connection
+- Verify the KMS servers are reachable:
 
 ```powershell
 
@@ -164,11 +158,9 @@ Test-NetConnection kms.digiboy.ir -Port 1688
 
 📚 Official References
 
-    KMS Client Activation Keys (Microsoft Learn)
-
-    KMS Activation Planning (Microsoft Learn)
-
-    Volume Licensing Service Center
+- KMS Client Activation Keys (Microsoft Learn)
+- KMS Activation Planning (Microsoft Learn)
+- Volume Licensing Service Center
 
 📄 License
 
